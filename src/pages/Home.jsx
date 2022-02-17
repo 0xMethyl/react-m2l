@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header1 from '../components/molecules/Header1/Header1';
+import Header from '../components/molecules/Header/Header';
 // import Header2 from '../../src/components/molecules/Header2/Header2';
 
 import Contenthome from '../../src/components/molecules/ContentHome/ContentHome';
@@ -11,7 +11,7 @@ const Home = () => {
     
     return (
         <div className="home">
-            <Header1 />
+            <Header />
             <Contenthome />
             <Footer />
         </div>

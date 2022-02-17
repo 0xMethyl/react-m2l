@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Header1 from '../../src/components/molecules/Header1/Header1';
+import Header from '../components/molecules/Header/Header';
 import Signup from '../../src/components/molecules/Signup/Signup';
 
 const Signupage = () => {
     return (
         <div className="signupage">
-            <Header1 />
+            <Header />
 			<Signup />
         </div>
         

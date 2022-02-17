@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Checkout from '../../src/components/molecules/Checkout/Checkout';
-import Header1 from '../../src/components/molecules/Header1/Header1';
+import Header from '../components/molecules/Header/Header';
 
 const Checkoutpage = () =>  {   
     return (
         <div className="checkout">
-            <Header1 />
+            <Header />
             <Checkout />
         </div>
     );

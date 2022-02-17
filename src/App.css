@@ -13,9 +13,7 @@
     background-color:rgb(178,34,34);
 }
 
-.imgresp{
-    
-}
+
 @media (max-width:787px){
     .sidebar-nav img, h5{
         z-index: 100;
@@ -328,10 +326,6 @@ a > a:hover, a:focus, a:active {
     color: white;
 }
 
-sidebar-nav-item:hover{
-    color:rgb(255, 190, 10);
-}
-
 .sidebar-nav-item i {
     width: 36px;
     font-size: 19px;
@@ -533,10 +527,6 @@ sidebar-nav-item:hover{
 /* Categories */
 
 /* Signup form */
-
-.signup{
-
-}
 
 @media (min-width:992px){
     .main {

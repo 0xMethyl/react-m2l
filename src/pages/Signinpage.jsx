@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Header1 from '../../src/components/molecules/Header1/Header1';
+import Header from '../components/molecules/Header/Header';
 import Signin from '../../src/components/molecules/Signin/Signin';
 
 const Signinpage = () => {
     return (
         <div className="signupage">
-            <Header1 />
+            <Header />
 			<Signin />
-            
+
         </div>
         
     );

@@ -116,7 +116,7 @@ const Signup = () => {
 					<div className='row'>
 						<div className='formp1 col-6'>
 							<div className="row">
-								<div className="form-group col-4">
+								<div className="form-group col-6">
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -130,7 +130,7 @@ const Signup = () => {
 										</select>
 									</div>
 								</div>
-								<div className="form-group col-8">
+								<div className="form-group col-6">
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -209,7 +209,7 @@ const Signup = () => {
 								<div className="input-group">
 		            				<div className="input-group-prepend">
 		            					<span className="input-group-text">
-		            						<span className="fa fa-location"></span>
+		            						<span className="fa fa-map"></span>
 		            					</span>                    
 		            				</div>
 		            				<input type="text" className="form-control" name="adresse" onChange = {handleChange9} value={adresse}  placeholder="Adresse" required="required" />
