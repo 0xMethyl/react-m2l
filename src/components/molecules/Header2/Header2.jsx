@@ -7,7 +7,7 @@ const Header2 = () => {
                 <div className="container">
                   <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img className="bi me-2" width="80" height="64" alt="logo" src="/images/DreamTek.png" />
+                        <img className="imgresp bi me-2" width="80" height="64" alt="logo" src="/images/logo.png" />
                     </a>
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">

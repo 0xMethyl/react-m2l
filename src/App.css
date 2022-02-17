@@ -4,15 +4,30 @@
 }
 /*  HEADER  */
 .bg-header{
-    background-color: rgba(87,10,184,255);
+    background-color: rgb(178,34,34);
 }
 
 /*  HEADER1  */
 
 .signup{
-    background-color:rgba(87,10,184,255);
+    background-color:rgb(178,34,34);
 }
-@media (max-width:1800px){
+
+.imgresp{
+    
+}
+@media (max-width:787px){
+    .sidebar-nav img, h5{
+        z-index: 100;
+        display: none;
+    }
+}
+@media (min-width:992px){
+    .fa-bars {
+        display: none;
+    }
+}
+@media (max-width:787px){
     .sidebar-nav img, h5{
         z-index: 100;
         display: none;
@@ -241,7 +256,7 @@ h1, .h1 {
 }
 
 .sidebar-nav {
-    background-color: rgba(87,10,184,255);
+    background-color: rgb(178,34,34);
 }
 
 .sidebar-nav a {
@@ -313,6 +328,9 @@ a > a:hover, a:focus, a:active {
     color: white;
 }
 
+sidebar-nav-item:hover{
+    color:rgb(255, 190, 10);
+}
 
 .sidebar-nav-item i {
     width: 36px;
@@ -365,7 +383,7 @@ a > a:hover, a:focus, a:active {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid rgba(87,10,184,255);
+    border-top: 5px solid rgb(178,34,34);
     -webkit-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);

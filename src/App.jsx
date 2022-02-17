@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Signupage from './pages/Signupage';
+import Signinpage from './pages/Signinpage';
 import Checkoutpage from './pages/Checkoutpage';
+import Adminpage from './pages/Adminpage';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -12,7 +14,6 @@ import './App.css';
 
 
 const App = () => {
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,6 +29,10 @@ const App = () => {
           <Signupage />
         } />  
 
+        <Route path="/login" element={
+          <Signinpage />
+        } />  
+
         <Route path="/checkout" element={
           <Checkoutpage />
         } /> 
@@ -39,6 +44,10 @@ const App = () => {
         <Route path="/privacy" element={
             <Signupage />
           } />  
+
+        <Route path="/admin" element={
+            <Adminpage />
+          } /> 
 
         </Routes>
       </BrowserRouter>

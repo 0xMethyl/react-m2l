@@ -108,7 +108,7 @@ const Signup = () => {
     return (
 		
         <div className="signupage" align="center">
-            <div className='signup-form col-10 col-lg-7 mt-5 p-5' style={{ borderRadius: "15px", boxshadow: "10px" }}>
+            <div className='signup-form col-10 offset-1 col-lg-8 offset-lg-2 mt-3 p-5' style={{ borderRadius: "15px", boxshadow: "10px" }}>
                 <form class="form" onSubmit={handleSubmit}>
 			    <h2>Création de compte</h2>
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
@@ -241,7 +241,7 @@ const Signup = () => {
 		            	<label className="form-check-label"><input type="checkbox" className='termsprivacy' required="required" /> I accept the <a href="/terms">Terms of Use</a> &amp; <a href="/privacy">Privacy Policy</a></label>
 		            </div>
 		            <div className="form-group">
-                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-primary btn-lg">Sign Up</button>
+                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Sign Up</button>
                     </div>
                 </form>
             </div>
