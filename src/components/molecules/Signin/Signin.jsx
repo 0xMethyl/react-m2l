@@ -4,7 +4,7 @@ import { useState } from "react";
 const Signin = () => {
 
 	const login = () => {
-		fetch('http://localhost:3001/users/register', {
+		fetch('http://localhost:3001/users/login', {
 		  	method: 'POST',
 		  	headers: {
 				'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const Signin = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		login() 
-	  }
+	}
 
     return (
         <div className="signin" align="center">
@@ -39,8 +39,8 @@ const Signin = () => {
                 <form class="form" onSubmit={handleSubmit}>
 			    <h2>Connection à votre compte</h2>
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
-                    
-					<div className="col-6">
+
+					<div className="col-md-6 col-12">
 						<hr/>
 						<div className="form-group">
 							<div className="input-group">
@@ -64,7 +64,7 @@ const Signin = () => {
 						</div>
 					</div>
                     <div className="form-group">
-                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Connection</button>
+                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Se connecter</button>
                     </div>
                 </form>
             </div>

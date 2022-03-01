@@ -8,7 +8,6 @@ const Signinpage = () => {
         <div className="signupage">
             <Header />
 			<Signin />
-
         </div>
         
     );

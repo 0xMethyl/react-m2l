@@ -125,7 +125,7 @@ a {
 }
 
 a:hover {
-    color: #0458eb;
+    color: #a1a1a1!important;
     text-decoration: underline;
 }
 
@@ -176,12 +176,18 @@ h1, .h1 {
     text-align: center;
 }
 
+.header-pad{
+    padding: 1em!important;
+    padding-left: 5%!important;
+}
+
 .sidebar {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
+    overflow : hidden;
 }
 
 .sidebar-app {
@@ -200,6 +206,7 @@ h1, .h1 {
     flex-grow: 2;
     margin-top: 84px;
 }
+
 
 .sidebar-content {
     -webkit-box-flex: 2;

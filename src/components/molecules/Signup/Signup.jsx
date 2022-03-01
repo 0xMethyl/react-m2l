@@ -114,9 +114,9 @@ const Signup = () => {
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
 		            <hr />
 					<div className='row'>
-						<div className='formp1 col-6'>
+						<div className='formp1 col-md-6 col-12'>
 							<div className="row">
-								<div className="form-group col-6">
+								<div className="form-group col-md-6 col-12">
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -130,7 +130,7 @@ const Signup = () => {
 										</select>
 									</div>
 								</div>
-								<div className="form-group col-6">
+								<div className="form-group col-md-6 col-12">
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -142,7 +142,7 @@ const Signup = () => {
 								</div>
 							</div>
 							<div className="row">
-								<div className="form-group col-6">
+								<div className="form-group col-md-6 col-12">
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -152,7 +152,7 @@ const Signup = () => {
 										<input type="text" className="form-control" style={{ }} onChange = {handleChange3} placeholder="Nom de famille" value={nom} required="required" />
 									</div>
 								</div>
-								<div className="form-group col-6">
+								<div className="form-group col-md-6 col-12">
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -173,28 +173,30 @@ const Signup = () => {
 		            				<input type="text" className="form-control" name="email" placeholder="E-mail" onChange = {handleChange5} value={email} required="required" />
 		            			</div>
                     		</div>
-		            		<div className="form-group">
-		            			<div className="input-group">
-		            				<div className="input-group-prepend">
-		            					<span className="input-group-text">
-		            						<i className="fa fa-lock"></i>
-		            					</span>                    
+							<div className="row">
+		            			<div className="form-group col-md-6 col-12">
+		            				<div className="input-group">
+		            					<div className="input-group-prepend">
+		            						<span className="input-group-text">
+		            							<i className="fa fa-lock"></i>
+		            						</span>                    
+		            					</div>
+		            					<input type="password" className="form-control" onChange = {handleChange6} value={password} placeholder="Mot de passe" required="required" />
 		            				</div>
-		            				<input type="password" className="form-control" onChange = {handleChange6} value={password} placeholder="Mot de passe" required="required" />
-		            			</div>
-                    		</div>
-		            		<div className="form-group">
-		            			<div className="input-group">
-		            				<div className="input-group-prepend">
-		            					<span className="input-group-text">
-		            						<i className="fa fa-check"></i>
-		            					</span>                    
+                    			</div>
+		            			<div className="form-group col-md-6 col-12">
+		            				<div className="input-group">
+		            					<div className="input-group-prepend">
+		            						<span className="input-group-text">
+		            							<i className="fa fa-check"></i>
+		            						</span>                    
+		            					</div>
+		            					<input type="password" className="form-control" name="confirm_password"  onChange = {handleChange7} value={confirm_password}  placeholder="Confirmez votre mot de passe" required="required" />
 		            				</div>
-		            				<input type="password" className="form-control" name="confirm_password"  onChange = {handleChange7} value={confirm_password}  placeholder="Confirmez votre mot de passe" required="required" />
-		            			</div>
-                    		</div>
+                    			</div>
+							</div>
 						</div>
-						<div className='formp2 col-6'>
+						<div className='formp2 col-md-6 col-12'>
 							<div className="form-group">
 		            			<div className="input-group">
 		            				<div className="input-group-prepend">
