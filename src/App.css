@@ -125,7 +125,11 @@ a {
 }
 
 a:hover {
+<<<<<<< HEAD
     color: #0458eb;
+=======
+    color: #a1a1a1!important;
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
     text-decoration: underline;
 }
 
@@ -176,12 +180,24 @@ h1, .h1 {
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.header-pad{
+    padding: 1em!important;
+    padding-left: 5%!important;
+}
+
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 .sidebar {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
+<<<<<<< HEAD
+=======
+    overflow : hidden;
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 }
 
 .sidebar-app {
@@ -201,6 +217,10 @@ h1, .h1 {
     margin-top: 84px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 .sidebar-content {
     -webkit-box-flex: 2;
     -webkit-flex-grow: 2;
@@ -539,4 +559,8 @@ a > a:hover, a:focus, a:active {
     .main {
         padding: 20px;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4

@@ -4,7 +4,11 @@ import { useState } from "react";
 const Signin = () => {
 
 	const login = () => {
+<<<<<<< HEAD
 		fetch('http://localhost:3001/users/register', {
+=======
+		fetch('http://localhost:3001/users/login', {
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 		  	method: 'POST',
 		  	headers: {
 				'Content-Type': 'application/json',
@@ -31,7 +35,11 @@ const Signin = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		login() 
+<<<<<<< HEAD
 	  }
+=======
+	}
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 
     return (
         <div className="signin" align="center">
@@ -39,8 +47,13 @@ const Signin = () => {
                 <form class="form" onSubmit={handleSubmit}>
 			    <h2>Connection à votre compte</h2>
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
+<<<<<<< HEAD
                     
 					<div className="col-6">
+=======
+
+					<div className="col-md-6 col-12">
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 						<hr/>
 						<div className="form-group">
 							<div className="input-group">
@@ -64,7 +77,11 @@ const Signin = () => {
 						</div>
 					</div>
                     <div className="form-group">
+<<<<<<< HEAD
                         <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Connection</button>
+=======
+                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Se connecter</button>
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
                     </div>
                 </form>
             </div>

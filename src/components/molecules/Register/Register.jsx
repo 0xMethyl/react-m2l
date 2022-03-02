@@ -5,7 +5,7 @@ import React from 'react';
 import { useState } from "react";
 
 
-const Signup = () => {
+const Register = () => {
 
 	const [genre, setGenre] = useState("");
 	const [datenaissance, setDatenaissance] = useState("");
@@ -105,6 +105,7 @@ const Signup = () => {
 	// setAdresse(event.target.value);
 	// setVille(event.target.value);
 	// setCodepostal(event.target.value);
+
     return (
 		
         <div className="signupage" align="center">
@@ -114,33 +115,23 @@ const Signup = () => {
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
 		            <hr />
 					<div className='row'>
-<<<<<<< HEAD
 						<div className='formp1 col-6'>
 							<div className="row">
 								<div className="form-group col-6">
-=======
-						<div className='formp1 col-md-6 col-12'>
-							<div className="row">
-								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
 												<span className="fa fa-transgender"></span>
 											</span>                    
 										</div>
-										<select className="form-control" name="genre" value={genre} required="required" onChange = {handleChange1}>
+										<select className="form-control" name="genre" value={genre} onChange = {handleChange1}>
 											<option value="monsieur" selected>Monsieur</option>
 											<option value="madame">Madame</option>
 											<option value="autres">Autre</option>
 										</select>
 									</div>
 								</div>
-<<<<<<< HEAD
 								<div className="form-group col-6">
-=======
-								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -152,32 +143,24 @@ const Signup = () => {
 								</div>
 							</div>
 							<div className="row">
-<<<<<<< HEAD
 								<div className="form-group col-6">
-=======
-								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
 												<span className="fa fa-user"></span>
 											</span>                    
 										</div>
-										<input type="text" className="form-control" style={{ }} onChange = {handleChange3} placeholder="Nom de famille" value={nom} required="required" />
+										<input type="text" className="form-control" style={{ }} onChange = {handleChange3} placeholder="Nom de famille" value={nom} />
 									</div>
 								</div>
-<<<<<<< HEAD
 								<div className="form-group col-6">
-=======
-								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
 												<span className="fa fa-user"></span>
 											</span>                    
 										</div>
-										<input type="text" className="form-control" style={{ }} onChange = {handleChange4} placeholder="Prénom" value={prenom} required="required" />
+										<input type="text" className="form-control" style={{ }} onChange = {handleChange4} placeholder="Prénom" value={prenom} />
 									</div>
 								</div>
 							</div>
@@ -188,10 +171,9 @@ const Signup = () => {
 		            						<span className="fa fa-paper-plane"></span>
 		            					</span>                    
 		            				</div>
-		            				<input type="text" className="form-control" name="email" placeholder="E-mail" onChange = {handleChange5} value={email} required="required" />
+		            				<input type="text" className="form-control" name="email" placeholder="E-mail" onChange = {handleChange5} value={email} />
 		            			</div>
                     		</div>
-<<<<<<< HEAD
 		            		<div className="form-group">
 		            			<div className="input-group">
 		            				<div className="input-group-prepend">
@@ -199,7 +181,7 @@ const Signup = () => {
 		            						<i className="fa fa-lock"></i>
 		            					</span>                    
 		            				</div>
-		            				<input type="password" className="form-control" onChange = {handleChange6} value={password} placeholder="Mot de passe" required="required" />
+		            				<input type="password" className="form-control" onChange = {handleChange6} value={password} placeholder="Mot de passe" />
 		            			</div>
                     		</div>
 		            		<div className="form-group">
@@ -209,37 +191,11 @@ const Signup = () => {
 		            						<i className="fa fa-check"></i>
 		            					</span>                    
 		            				</div>
-		            				<input type="password" className="form-control" name="confirm_password"  onChange = {handleChange7} value={confirm_password}  placeholder="Confirmez votre mot de passe" required="required" />
+		            				<input type="password" className="form-control" name="confirm_password"  onChange = {handleChange7} value={confirm_password}  placeholder="Confirmez votre mot de passe" />
 		            			</div>
                     		</div>
 						</div>
 						<div className='formp2 col-6'>
-=======
-							<div className="row">
-		            			<div className="form-group col-md-6 col-12">
-		            				<div className="input-group">
-		            					<div className="input-group-prepend">
-		            						<span className="input-group-text">
-		            							<i className="fa fa-lock"></i>
-		            						</span>                    
-		            					</div>
-		            					<input type="password" className="form-control" onChange = {handleChange6} value={password} placeholder="Mot de passe" required="required" />
-		            				</div>
-                    			</div>
-		            			<div className="form-group col-md-6 col-12">
-		            				<div className="input-group">
-		            					<div className="input-group-prepend">
-		            						<span className="input-group-text">
-		            							<i className="fa fa-check"></i>
-		            						</span>                    
-		            					</div>
-		            					<input type="password" className="form-control" name="confirm_password"  onChange = {handleChange7} value={confirm_password}  placeholder="Confirmez votre mot de passe" required="required" />
-		            				</div>
-                    			</div>
-							</div>
-						</div>
-						<div className='formp2 col-md-6 col-12'>
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 							<div className="form-group">
 		            			<div className="input-group">
 		            				<div className="input-group-prepend">
@@ -247,7 +203,7 @@ const Signup = () => {
 		            						<span className="fa fa-phone"></span>
 		            					</span>                    
 		            				</div>
-		            				<input type="text" className="form-control" style={{ }} name="telephone"  onChange = {handleChange8} value={telephone}  placeholder="Téléphone" required="required" />
+		            				<input type="text" className="form-control" style={{ }} name="telephone"  onChange = {handleChange8} value={telephone}  placeholder="Téléphone" />
 		            			</div>
                     		</div>
                     		<div className="form-group">
@@ -257,7 +213,7 @@ const Signup = () => {
 		            						<span className="fa fa-map"></span>
 		            					</span>                    
 		            				</div>
-		            				<input type="text" className="form-control" name="adresse" onChange = {handleChange9} value={adresse}  placeholder="Adresse" required="required" />
+		            				<input type="text" className="form-control" name="adresse" onChange = {handleChange9} value={adresse}  placeholder="Adresse" />
 		            			</div>
                     		</div>
 		            		<div className="form-group">
@@ -267,7 +223,7 @@ const Signup = () => {
 		            						<i className="fa fa-city"></i>
 		            					</span>                    
 		            				</div>
-		            				<input type="text" className="form-control" name="ville"  onChange = {handleChange10} value={ville} placeholder="Ville" required="required" />
+		            				<input type="text" className="form-control" name="ville"  onChange = {handleChange10} value={ville} placeholder="Ville" />
 		            			</div>
                     		</div>
 		            		<div className="form-group">
@@ -277,16 +233,16 @@ const Signup = () => {
 		            						<i className="fa fa-lock"></i>
 		            					</span>                    
 		            				</div>
-		            				<input type="text" className="form-control" name="codepostal"  onChange = {handleChange11} value={codepostal} placeholder="Code postal" required="required" />
+		            				<input type="text" className="form-control" name="codepostal"  onChange = {handleChange11} value={codepostal} placeholder="Code postal" />
 		            			</div>
                     		</div>
 						</div>
 					</div>
                     <div className="form-group">
-		            	<label className="form-check-label"><input type="checkbox" className='termsprivacy' required="required" /> I accept the <a href="/terms">Terms of Use</a> &amp; <a href="/privacy">Privacy Policy</a></label>
+		            	<label className="form-check-label"><input type="checkbox" className='termsprivacy' /> I accept the <a href="/terms">Terms of Use</a> &amp; <a href="/privacy">Privacy Policy</a></label>
 		            </div>
 		            <div className="form-group">
-                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Sign Up</button>
+                        <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Inscription</button>
                     </div>
                 </form>
             </div>
@@ -294,4 +250,4 @@ const Signup = () => {
     );
 }
 
-export default Signup;
+export default Register;

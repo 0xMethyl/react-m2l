@@ -5,6 +5,7 @@ import 'mdbreact/dist/css/mdb.css';
 import { Link } from 'react-router-dom';
 import DropDownHeader from "../../atomes/DropDownHeader/DropDownHeader";
 
+<<<<<<< HEAD
 
 
 
@@ -31,6 +32,8 @@ $(document).ready(function () {
 });
 */
 
+=======
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 const Header = () => {
 
 
@@ -39,7 +42,11 @@ const Header = () => {
 
     return(
       <div className="header" >
+<<<<<<< HEAD
           <header className="bg-header p-3 bg-lighter text-white">
+=======
+          <header className="bg-header header-pad bg-lighter text-white">
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
               <div className="container" style={{ marginLeft: "auto", marginRight:"auto", maxWidth:"100%"}}>
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                   <div className="sidebar-nav">
@@ -56,6 +63,7 @@ const Header = () => {
                     <nav className="sidebar-nav-list">
                         <div className='sidebar-nav-dropdown'>
                           <a href="/#" onClick={(e) =>{ e.preventDefault(); setToggle(!toggle)}} className="sidebar-nav-item sidebar-nav-dropdown-toggle" ><span role="img" aria-label="desktop"><i className='me-2'></i>📂</span> Catégories </a>
+<<<<<<< HEAD
                           {toggle && <DropDownHeader /> }
                             <a href="/#" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>⚙️</span> Paramètres</a><a
                                 href="/#" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>👤</span> Profil</a>
@@ -63,6 +71,15 @@ const Header = () => {
                                 <hr />
                         </div>
                       <a href="/#" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🖐️</span> Déconnexion </a>
+=======
+                          { toggle && <DropDownHeader /> }
+                            <a href="/settings" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>⚙️</span> Paramètres</a>
+                            <a href="/profile" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>👤</span> Profil</a>
+                            <a href="/cart" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🛒</span> Panier</a>
+                            <hr />
+                        </div>
+                      <a href="/logout" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🖐️</span> Déconnexion </a>
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
                     </nav>
                   </div>
                   <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{ marginLeft: "auto", marginRight:"0"}}>
@@ -81,7 +98,11 @@ const Header = () => {
                   </form>
 
                   <div className="text-end" style={{ float:"right" }}>
+<<<<<<< HEAD
                     <Link to="/signin">
+=======
+                    <Link to="/login">
+>>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
                       <button type="button" className="btn me-2 signin" style={{ color:"#fff", outline: "white", borderColor: "white" }}  /* onClick={()=> context.history.push('')} */>
                         Se connecter
                       </button>
