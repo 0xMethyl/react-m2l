@@ -7,6 +7,7 @@ import Signupage from './pages/Signupage';
 import Signinpage from './pages/Signinpage';
 import Checkoutpage from './pages/Checkoutpage';
 import Adminpage from './pages/Adminpage';
+import Contactpage from './pages/Contactpage';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -47,6 +48,10 @@ const App = () => {
         <Route path="/admin" element={
             <Adminpage />
           } /> 
+
+        <Route path="/contact" element={
+          <Contactpage />
+        } />  
 
         </Routes>
       </BrowserRouter>

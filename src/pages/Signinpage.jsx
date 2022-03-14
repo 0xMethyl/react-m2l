@@ -5,13 +5,9 @@ import Signin from '../../src/components/molecules/Signin/Signin';
 
 const Signinpage = () => {
     return (
-        <div className="signupage">
+        <div className="home">
             <Header />
 			<Signin />
-<<<<<<< HEAD
-
-=======
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
         </div>
         
     );

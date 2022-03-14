@@ -107,22 +107,16 @@ const Signup = () => {
 	// setCodepostal(event.target.value);
     return (
 		
-        <div className="signupage" align="center">
-            <div className='signup-form col-10 offset-1 col-lg-8 offset-lg-2 mt-3 p-5' style={{ borderRadius: "15px", boxshadow: "10px" }}>
+        <div className="sign" align="center" style={{zIndex:"-1"}}>
+            <div className='signup-form col-12 offset-0 col-xl-10 offset-lg-0 mt-3' style={{ borderRadius: "15px", boxshadow: "10px" }}>
                 <form class="form" onSubmit={handleSubmit}>
 			    <h2>Création de compte</h2>
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
 		            <hr />
 					<div className='row'>
-<<<<<<< HEAD
-						<div className='formp1 col-6'>
-							<div className="row">
-								<div className="form-group col-6">
-=======
 						<div className='formp1 col-md-6 col-12'>
 							<div className="row">
 								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -136,11 +130,7 @@ const Signup = () => {
 										</select>
 									</div>
 								</div>
-<<<<<<< HEAD
-								<div className="form-group col-6">
-=======
 								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -152,11 +142,7 @@ const Signup = () => {
 								</div>
 							</div>
 							<div className="row">
-<<<<<<< HEAD
-								<div className="form-group col-6">
-=======
 								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -166,11 +152,7 @@ const Signup = () => {
 										<input type="text" className="form-control" style={{ }} onChange = {handleChange3} placeholder="Nom de famille" value={nom} required="required" />
 									</div>
 								</div>
-<<<<<<< HEAD
-								<div className="form-group col-6">
-=======
 								<div className="form-group col-md-6 col-12">
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 									<div className="input-group">
 										<div className="input-group-prepend">
 											<span className="input-group-text">
@@ -191,30 +173,6 @@ const Signup = () => {
 		            				<input type="text" className="form-control" name="email" placeholder="E-mail" onChange = {handleChange5} value={email} required="required" />
 		            			</div>
                     		</div>
-<<<<<<< HEAD
-		            		<div className="form-group">
-		            			<div className="input-group">
-		            				<div className="input-group-prepend">
-		            					<span className="input-group-text">
-		            						<i className="fa fa-lock"></i>
-		            					</span>                    
-		            				</div>
-		            				<input type="password" className="form-control" onChange = {handleChange6} value={password} placeholder="Mot de passe" required="required" />
-		            			</div>
-                    		</div>
-		            		<div className="form-group">
-		            			<div className="input-group">
-		            				<div className="input-group-prepend">
-		            					<span className="input-group-text">
-		            						<i className="fa fa-check"></i>
-		            					</span>                    
-		            				</div>
-		            				<input type="password" className="form-control" name="confirm_password"  onChange = {handleChange7} value={confirm_password}  placeholder="Confirmez votre mot de passe" required="required" />
-		            			</div>
-                    		</div>
-						</div>
-						<div className='formp2 col-6'>
-=======
 							<div className="row">
 		            			<div className="form-group col-md-6 col-12">
 		            				<div className="input-group">
@@ -239,7 +197,6 @@ const Signup = () => {
 							</div>
 						</div>
 						<div className='formp2 col-md-6 col-12'>
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 							<div className="form-group">
 		            			<div className="input-group">
 		            				<div className="input-group-prepend">

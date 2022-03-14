@@ -5,7 +5,7 @@ import Signup from '../../src/components/molecules/Signup/Signup';
 
 const Signupage = () => {
     return (
-        <div className="signupage">
+        <div className="home">
             <Header />
 			<Signup />
         </div>

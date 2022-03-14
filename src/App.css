@@ -7,6 +7,14 @@
     background-color: rgb(178,34,34);
 }
 
+.header{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    padding-left: 0px;
+    z-index: 999999;
+}
+
 /*  HEADER1  */
 
 .signup{
@@ -58,8 +66,12 @@
 
 /* Main */
 
-@media (min-width:992px){
+/* @media (min-width:992px){
     .main {
+        position: absolute;
+        left: 330px; top:92px; right:0; bottom:0;
+    }
+    .sign {
         position: absolute;
         left: 330px; top:92px; right:0; bottom:0;
     }
@@ -69,7 +81,10 @@
     .main {
         padding: 20px;
     }
-}
+    .sign {
+        padding: 20px;
+    }
+} */
 
 /* Navbar */
 
@@ -125,11 +140,7 @@ a {
 }
 
 a:hover {
-<<<<<<< HEAD
-    color: #0458eb;
-=======
     color: #a1a1a1!important;
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
     text-decoration: underline;
 }
 
@@ -180,24 +191,18 @@ h1, .h1 {
     text-align: center;
 }
 
-<<<<<<< HEAD
-=======
 .header-pad{
     padding: 1em!important;
     padding-left: 5%!important;
 }
 
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 .sidebar {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
-<<<<<<< HEAD
-=======
     overflow : hidden;
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 }
 
 .sidebar-app {
@@ -217,10 +222,7 @@ h1, .h1 {
     margin-top: 84px;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
 .sidebar-content {
     -webkit-box-flex: 2;
     -webkit-flex-grow: 2;
@@ -435,6 +437,7 @@ a > a:hover, a:focus, a:active {
     background: rgba(255, 255, 255, 0.04);
 }
 
+
 .menu-toggle {
     position: relative;
     width: 42px;
@@ -548,19 +551,31 @@ a > a:hover, a:focus, a:active {
 
 /* Signup form */
 
-@media (min-width:992px){
+@media (min-width:769px){
     .main {
+        position: absolute;
+        left: 330px; top:92px; right:0; bottom:0;
+    }
+    .sign {
         position: absolute;
         left: 330px; top:92px; right:0; bottom:0;
     }
 }
 
-@media (max-width:992px){
+@media (max-width:768px){
     .main {
+        margin-top: 0px;
         padding: 20px;
     }
-<<<<<<< HEAD
+    .sign {
+        margin-top: 0px;
+        padding: 20px;
+    }
+    .header{
+        position: unset;
+        top:0px;
+        width: 100%;
+        padding-left: 0px;
+        z-index: 999999;
+    }
 }
-=======
-}
->>>>>>> 3adfdae6f5ecab0d88197d56dcd532d108b951f4
