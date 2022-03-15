@@ -28,10 +28,10 @@ const Produit = () => {
                 {produits.map((produit) => (
                     <div className="col-12 col-sm-6 col-lg-3 mb-5 mt-3">
                         <div height="200px" className="rounded border border-dark pt-3 pb-1" style={{backgroundColor: "white"}}>
-                            <img style={{width :"70%", height:"auto",marginRight:"auto",marginLeft:"15%"}} src="images/CG1.jpg" alt="" />
+                            <img style={{width :"70%", height:"auto",marginRight:"auto",marginLeft:"15%"}} src={`images/${produit.produit_nom}.jpg`.split(' ').join('_')} alt="" />
                             <p style={{display:"flex",justifyContent:"center",fontSize:"15px", marginTop:"10px"}}>{produit.produit_nom}</p>
                             <p style={{display:"flex",justifyContent:"center",fontSize:"15px", marginTop:"10px"}}>{produit.produit_prix}€</p>
-                            <a className="btn btn-danger col-6 offset-3 mb-3" href="/#" style={{display:"flex",justifyContent:"center",fontSize:"13px"}}>Ajouter au panier</a>
+                            <a className="btn btn-danger col-6 offset-3 mb-3" href="/#" style={{display:"flex",justifyContent:"center",fontSize:"13px"}}>Voir le produit</a>
                         </div>
                     </div>
                 ))}
