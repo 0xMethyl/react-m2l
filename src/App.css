@@ -493,6 +493,11 @@ a > a:hover, a:focus, a:active {
     
 }
 
+.prodImg{
+    width: 150px;
+    height: auto;
+}
+
 @media (min-width: 1000px) {
     .sidebar-app {
         margin-left: 238px;
