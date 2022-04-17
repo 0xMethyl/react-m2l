@@ -4,7 +4,6 @@
 import React from 'react';
 import { useState } from "react";
 
-
 const Signup = () => {
 
 	const [genre, setGenre] = useState("");
@@ -19,10 +18,10 @@ const Signup = () => {
 	const [ville, setVille] = useState("");
 	const [codepostal, setCodepostal] = useState("");
 	
-
 	var dateNaissanceFormated = datenaissance.split("/").reverse().join("-");
-	console.log(dateNaissanceFormated);
+	
 	const register = () => {
+		
 	fetch('http://localhost:3001/users/register', {
 	  method: 'POST',
 	  headers: {
@@ -43,13 +42,13 @@ const Signup = () => {
 	  }),
 	})
 	  .then((res) => res.json())
-	  .catch((err) => console.log('error'))
+	  .catch((err) => console.log('error', err))
 	}
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		register() 
-	  }
+	}
 	
 	const handleChange1 = (event) => {
 		setGenre(event.target.value);
@@ -123,10 +122,10 @@ const Signup = () => {
 												<span className="fa fa-transgender"></span>
 											</span>                    
 										</div>
-										<select className="form-control" name="genre" value={genre} required="required" onChange = {handleChange1}>
+										<select className="form-control" name="genre" value={genre} required="required" onChange={handleChange1}>
 											<option value="monsieur" selected>Monsieur</option>
 											<option value="madame">Madame</option>
-											<option value="autres">Autre</option>
+											<option value="autre">Autre</option>
 										</select>
 									</div>
 								</div>
@@ -137,7 +136,7 @@ const Signup = () => {
 												<span className="fa fa-calendar"></span>
 											</span>                    
 										</div>
-										<input type="date" className="form-control" id="start" onChange = {handleChange2} value={datenaissance} min="1930-01-01" max="2022-12-30"/>
+										<input type="date" className="form-control" id="start" onChange={handleChange2} value={datenaissance} min="1930-01-01" max="2022-12-30"/>
 									</div>
 								</div>
 							</div>
@@ -240,7 +239,7 @@ const Signup = () => {
 						</div>
 					</div>
                     <div className="form-group">
-		            	<label className="form-check-label"><input type="checkbox" className='termsprivacy' required="required" /> I accept the <a href="/terms">Terms of Use</a> &amp; <a href="/privacy">Privacy Policy</a></label>
+		            	<label className="form-check-label"><input type="checkbox" className='termsprivacy' required="required" /> J'accepte les <a href="/terms">Termes d'utilisation</a> &amp; <a href="/privacy">Politique de confidentialité</a></label>
 		            </div>
 		            <div className="form-group">
                         <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Sign Up</button>

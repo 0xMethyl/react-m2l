@@ -4,7 +4,7 @@
 }
 /*  HEADER  */
 .bg-header{
-    background-color: rgb(178,34,34);
+    background-color: rgb(27,27,27);
 }
 
 .header{
@@ -18,7 +18,7 @@
 /*  HEADER1  */
 
 .signup{
-    background-color:rgb(178,34,34);
+    background-color:rgb(27,27,27);
 }
 
 
@@ -276,7 +276,7 @@ h1, .h1 {
 }
 
 .sidebar-nav {
-    background-color: rgb(178,34,34);
+    background-color: rgb(27,27,27);
 }
 
 .sidebar-nav a {
@@ -399,7 +399,7 @@ a > a:hover, a:focus, a:active {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid rgb(178,34,34);
+    border-top: 5px solid rgb(27,27,27);
     -webkit-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);

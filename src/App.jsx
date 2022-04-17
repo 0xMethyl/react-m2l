@@ -8,6 +8,7 @@ import Signinpage from './pages/Signinpage';
 import Checkoutpage from './pages/Checkoutpage';
 import Adminpage from './pages/Adminpage';
 import Contactpage from './pages/Contactpage';
+import ProductSearchpage from './pages/ProductSearchpage';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -53,6 +54,9 @@ const App = () => {
           <Contactpage />
         } />  
 
+        <Route path="/search" element={
+            <ProductSearchpage />
+        } />
         </Routes>
       </BrowserRouter>
     </div>

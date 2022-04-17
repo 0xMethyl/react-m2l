@@ -20,6 +20,7 @@
         "react-linear-gradient-button": "^1.1.1",
         "react-router-dom": "^6.2.1",
         "react-scripts": "^5.0.0",
+        "react-select": "^5.3.0",
         "reactstrap": "^9.0.1",
         "rebuild-node-sass": "^1.1.0",
         "sass": "^1.48.0",
