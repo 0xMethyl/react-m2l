@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
 const DropDownHeader = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetchCategories();
+      }, []);
+    
+    const fetchCategories = () => {
+    
+        axios.get("http://localhost:3001/produits/categories")
+            .then((res) => {
+                console.log(res);
+                setCategories(res.data.success);
+                
+            })
+            .catch((err) => {
+                console.log(err);
+        });
+    }
+
     return (
         <div className='sidebar-nav-dropdown-menu'>
-            <a href="/#" className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label="infinite">♾️</span><i className='me-2'></i> TOUTES</a>
-            <a href="/#" className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label="football">⚽</span><i className='me-2'></i> FOOTBALL</a>
-            <a href="/#" className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label="basketball">🏀</span><i className='me-2'></i> BASKETBALL</a>
-            <a href="/#" className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label="handball">🤾</span><i className='me-2'></i> HANDBALL</a>
-            <a href="/#" className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label="tennis">🎾</span><i className='me-2'></i> TENNIS</a>
-            <a href="/#" className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label="rugby">🏈</span><i className='me-2'></i> RUGBY</a>
+            {categories.map((categorie) => (
+                <div className="raw">
+                    <a href={`/category/${categorie.categorie_id}`} className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label={categorie.categorie_nom}>◽</span><i className='me-2'></i> {categorie.categorie_nom.toUpperCase()}</a>
+                </div>
+            ))}
+
         </div>
     )
 }

@@ -9,6 +9,7 @@ import Checkoutpage from './pages/Checkoutpage';
 import Adminpage from './pages/Adminpage';
 import Contactpage from './pages/Contactpage';
 import ProductSearchpage from './pages/ProductSearchpage';
+import CategoryPage from './pages/Categorypage';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -56,6 +57,10 @@ const App = () => {
 
         <Route path="/search" element={
             <ProductSearchpage />
+        } />
+
+        <Route path="/category/:id" element={
+            <CategoryPage />
         } />
         </Routes>
       </BrowserRouter>
