@@ -5,7 +5,7 @@ import axios from 'axios';
 const ProductSearch = () => {
 
     const [produits, setProduits] = useState([]);
-    const searchParams = useSearchParams();
+    const params = useSearchParams();
 
     useEffect(() => {
         fetchProduits();
@@ -13,7 +13,7 @@ const ProductSearch = () => {
     
     const fetchProduits = () => {
 
-        axios.get("http://localhost:3001/produits/search/" + searchParams.get("keyword"))
+        axios.get("http://localhost:3001/produits/search/" + params.get("keyword"))
             .then((res) => {
                 console.log(res);
                 setProduits(res.data.success);
@@ -21,13 +21,12 @@ const ProductSearch = () => {
             .catch(err => {
                 console.log(err);
         });
-        alert(searchParams);
     }
 
     return(
         <div className="container produit-list" >
                 <div className="row" >
-                    <h3 style={{marginLeft:"1%", fontFamily: "sans-serif"}}>Produits associés à la recherche : <b>{searchParams.get("keyword")}</b></h3>
+                    <h3 style={{ marginLeft:"1%", fontFamily: "sans-serif" }}>Produits associés à la recherche : <b>{params.get("keyword")}</b></h3>
                     <hr style={{ width:"85%",marginRight: "auto", marginLeft:"0%"}} />
                     <div className="col-12 mb-5 mt-3" style={{fontFamily:"sans-serif"}}>
                         <div className="container">

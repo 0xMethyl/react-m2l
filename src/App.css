@@ -494,10 +494,16 @@ a > a:hover, a:focus, a:active {
 }
 
 .prodImg{
-    width: 150px;
+    width: auto;
+    height: 7em;
+}
+.prodDesc{
+    max-width : 90%;
+    margin: auto;
+}
+.imgDesc{
     height: auto;
 }
-
 @media (min-width: 1000px) {
     .sidebar-app {
         margin-left: 238px;
@@ -583,4 +589,24 @@ a > a:hover, a:focus, a:active {
         padding-left: 0px;
         z-index: 999999;
     }
+}
+
+.oui:hover{
+    border: 6px solid #ddd;
+}
+table,td,th{
+    align-items: left;
+    width:100%;
+}
+.alert-primary{
+    background-color: #ffffff;
+    border: 0px;
+    color: black;
+}
+div h4{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.prisque{
+    font-size: 35px;
 }

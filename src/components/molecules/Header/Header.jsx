@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
-import { Link } from 'react-router-dom';
+
+import axios from "../../../config/axios";
+
 import DropDownHeader from "../../atomes/DropDownHeader/DropDownHeader";
+import LoggedHeader from '../../atomes/LoggedHeader/LoggedHeader';
+import LogButton from '../../atomes/LogButton/LogButton';
+
 
 const Header = () => {
   const [keyword, setKeyword] = useState("");
+  const [loginStatus, setLoginStatus] = useState("");
 
   const search = () => {
 
-    fetch(`http://localhost:3001/produits/search/${encodeURIComponent(keyword)}`, { // eslint-disable-line
+    fetch(`http://localhost:3001/produits/search/${encodeURIComponent(keyword.toLowerCase())}`, { // eslint-disable-line
       method: 'GET',
       withCredentials: true,
       headers: {
@@ -39,7 +45,21 @@ const Header = () => {
 		search();
   }
 
-  // Déclarer un state avec useState 
+  useEffect(() => {
+    logged();
+  }, [])
+
+  const logged = () => {
+    axios.get("/users/login").then((response) => {
+      
+      if (response.data.loggedIn === true){
+        setLoginStatus(true);
+      }
+    }).catch((err) =>{
+      console.log("login error ", err)
+    })
+  }
+
   const [toggle, setToggle] = useState(false);
 
   return(
@@ -62,12 +82,8 @@ const Header = () => {
                       <div className='sidebar-nav-dropdown'>
                         <a href="/#" onClick={(e) =>{ e.preventDefault(); setToggle(!toggle)}} className="sidebar-nav-item sidebar-nav-dropdown-toggle"><span role="img" aria-label="desktop"><i className='me-2'></i>📂</span> Catégories </a>
                         { toggle && <DropDownHeader /> }
-                          <a href="/settings" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>⚙️</span> Paramètres</a>
-                          <a href="/profile" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>👤</span> Profil</a>
-                          <a href="/cart" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🛒</span> Panier</a>
-                          <hr />
+                        { loginStatus && <LoggedHeader />}
                       </div>
-                    <a href="/logout" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🖐️</span> Déconnexion </a>
                   </nav>
                 </div>
                 <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{ fontSize:"15px", marginLeft: "auto", marginRight:"0", fontFamily:"sans-serif", fontWeight:"600", float:"left"}}>
@@ -79,15 +95,8 @@ const Header = () => {
                 <form action="/search" className="col-12 mb-3 mb-lg-0 me-lg-3 col-lg-3 pl-1 ml-2 float-right" style={{ marginLeft: "auto", marginRight:"0"}}>
                   <input type="search" name="keyword" className="form-control form-control-dark" onChange={handleSearch} placeholder="Rechercher sur North Sport..." aria-label="Search" />
                 </form>
-                <div className="row text-end" style={{ float:"right" }}>
-                  <div className="col-6">
-                    <Link to="/login">
-                      <button type="button" className="btn btn-danger me-2 signin rounded-100" style={{ color:"white", fontFamily: "sans-serif", fontWeight:"600" }}  /* onClick={()=> context.history.push('')} */>
-                        Connexion
-                      </button>
-                    </Link>
-                  </div>
-                </div>
+                {!loginStatus && <LogButton />}
+                
               </div>
             </div>
         </header>
