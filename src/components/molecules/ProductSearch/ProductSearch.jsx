@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import axios from 'axios';
+import axios from '../../../config/axios';
 
 const ProductSearch = () => {
 
@@ -13,7 +13,7 @@ const ProductSearch = () => {
     
     const fetchProduits = () => {
 
-        axios.get("http://localhost:3001/produits/search/" + params.get("keyword"))
+        axios.get("/produits/search/" + params.get("keyword"))
             .then((res) => {
                 console.log(res);
                 setProduits(res.data.success);

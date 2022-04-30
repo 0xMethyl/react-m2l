@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "../../../config/axios";
 
 const Signin = () => {
 
+	const navigate = useNavigate();
 	const [loginStatus, setLoginStatus] = useState("");
 
 	const [email, setEmail] = useState("");
@@ -27,6 +29,9 @@ const Signin = () => {
 				password: password,
 			})
 			console.log(res);
+			
+			navigate('/home')
+
 		} catch (error) {
 			console.log(error);
 		} 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from '../../../config/axios';
 
 const DropDownHeader = () => {
     const [categories, setCategories] = useState([]);
@@ -10,11 +10,10 @@ const DropDownHeader = () => {
     
     const fetchCategories = () => {
     
-        axios.get("http://localhost:3001/produits/categories")
+        axios.get("/produits/categories")
             .then((res) => {
                 console.log(res);
                 setCategories(res.data.success);
-                
             })
             .catch((err) => {
                 console.log(err);

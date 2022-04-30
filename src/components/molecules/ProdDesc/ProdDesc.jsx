@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from '../../../config/axios';
 import { useParams } from "react-router-dom";
 
 const ProdDesc = () => {
@@ -10,7 +10,7 @@ const ProdDesc = () => {
 
     const getStock = async () => {
 
-        let data = await axios.get("http://localhost:3001/produits/stock/" + id)
+        let data = await axios.get("/produits/stock/" + id)
         
         console.log(data.data.success[0].produit_quantite);
         return data.data.success[0].produit_quantite;

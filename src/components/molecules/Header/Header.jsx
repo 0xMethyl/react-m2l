@@ -7,8 +7,8 @@ import axios from "../../../config/axios";
 
 import DropDownHeader from "../../atomes/DropDownHeader/DropDownHeader";
 import LoggedHeader from '../../atomes/LoggedHeader/LoggedHeader';
-import LogButton from '../../atomes/LogButton/LogButton';
 
+import Connexion from '../../atomes/Connexion/Connexion';
 
 const Header = () => {
   const [keyword, setKeyword] = useState("");
@@ -83,10 +83,11 @@ const Header = () => {
                         <a href="/#" onClick={(e) =>{ e.preventDefault(); setToggle(!toggle)}} className="sidebar-nav-item sidebar-nav-dropdown-toggle"><span role="img" aria-label="desktop"><i className='me-2'></i>📂</span> Catégories </a>
                         { toggle && <DropDownHeader /> }
                         { loginStatus && <LoggedHeader />}
+                        { !loginStatus && <Connexion/> }
                       </div>
                   </nav>
                 </div>
-                <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{ fontSize:"15px", marginLeft: "auto", marginRight:"0", fontFamily:"sans-serif", fontWeight:"600", float:"left"}}>
+                <ul className="nav col-12  col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{ fontSize:"15px", marginLeft: "auto", marginRight:"0", fontFamily:"sans-serif", fontWeight:"600", float:"left"}}>
                   <li><a href="/home" style={{ color:"#ec4646" }} className="nav-link px-2">Home</a></li>
                   <li><a href="/contact" className="nav-link px-2 text-white">Contact</a></li>
                   <li><a href="/support" className="nav-link px-2 text-white">Support</a></li>
@@ -95,8 +96,6 @@ const Header = () => {
                 <form action="/search" className="col-12 mb-3 mb-lg-0 me-lg-3 col-lg-3 pl-1 ml-2 float-right" style={{ marginLeft: "auto", marginRight:"0"}}>
                   <input type="search" name="keyword" className="form-control form-control-dark" onChange={handleSearch} placeholder="Rechercher sur North Sport..." aria-label="Search" />
                 </form>
-                {!loginStatus && <LogButton />}
-                
               </div>
             </div>
         </header>

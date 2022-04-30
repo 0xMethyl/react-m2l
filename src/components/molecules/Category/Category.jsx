@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from '../../../config/axios';
 import { useParams } from "react-router-dom";
 
 const Produit = () => {
@@ -12,7 +12,7 @@ const Produit = () => {
 
     const fetchProduits = () => {
 
-        axios.get("http://localhost:3001/produits/categories/" + id)
+        axios.get("/produits/categories/" + id)
             .then((res) => {
                 console.log(res);
                 setProduits(res.data.success);

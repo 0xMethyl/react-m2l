@@ -4,7 +4,7 @@ const instance = axios.create({
     baseURL: "http://localhost:3001/"
 })
 
-instance.defaults.headers.post['Content-Type'] = 'application/json'
-instance.defaults.withCredentials = true
+instance.defaults.headers.post['Content-Type'] = 'application/json';
+instance.defaults.withCredentials = true;
 
 export default instance;
