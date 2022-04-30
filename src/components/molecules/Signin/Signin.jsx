@@ -34,6 +34,7 @@ const Signin = () => {
 
 		} catch (error) {
 			console.log(error);
+			alert("Mauvais e-mail ou mot de passe.")
 		} 
 	}
 
