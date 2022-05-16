@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from '../../../config/axios';
 import { useParams } from "react-router-dom";
 
 const ProdDesc = () => {
+
+    let textInput = React.createRef();
+    const navigate = useNavigate();
     const { id } = useParams();
     const [produits, setProduits] = useState([]);
 
-    let [num, setNum]= useState(0);
+    let [num, setNum] = useState(0);
+
+    const onOnclickHandler = (e) => {
+        var qty = textInput.current.value;
+
+        let data = axios.get("/produits/addToCart/" + id + "/" + qty);
+        alert(qty + " produits ajouté au panier");
+        navigate('/home');
+
+        return data;
+    };
+    
 
     const getStock = async () => {
 
@@ -36,6 +51,7 @@ const ProdDesc = () => {
 
     useEffect(() => {
         fetchProduits();
+        // eslint-disable-next-line
     }, []);
 
     const fetchProduits = () => {
@@ -61,16 +77,18 @@ const ProdDesc = () => {
                     <h4>{produit.produit_nom}</h4>
                     <h4 className="prisque">{produit.produit_prix} €</h4>
                     <div style={{marginTop: "25px",textAlign: "right"}} className="col-12 alert alert-success">Stock disponible : {produit.produit_quantite}</div>
-                    <div style={{textAlign:"center",marginBottom: "5px",display: "flex",justifyContent: "right"}}>
-                        <input className="btn btn-outline-danger" onClick={decNum} type="button" value="-" style={{fontSize:"10px"}} />
-                        <input className="btn btn-danger" type="button" id="text" onChange={handleChange} value={num} readonly="true" style={{fontSize:"10px"}} />
-                        <input className="btn btn-outline-danger" type="button" value="+" onClick={incNum} style={{fontSize:"10px"}} /> 
-                    </div>
-                    <div style={{marginTop: "25px",display: "flex",justifyContent: "right"}}>
-                    <p className="btn btn-danger">
-                    Ajouter au panier <i className="fas fa-shopping-cart"></i>
-                    </p>
-                    </div>
+                    <form onSubmit={onOnclickHandler}>
+                        <div style={{textAlign:"center",marginBottom: "5px",display: "flex",justifyContent: "right"}}>
+                            <input className="btn btn-outline-danger" onClick={decNum} type="button" value="-" style={{fontSize:"10px"}} />
+                            <input className="btn btn-danger" ref={textInput} type="button" id="text" onChange={handleChange} value={num} readonly="true" style={{fontSize:"10px"}} />
+                            <input className="btn btn-outline-danger" type="button" value="+" onClick={incNum} style={{fontSize:"10px"}} /> 
+                            <div style={{marginTop: "25px",display: "flex",justifyContent: "right"}}>
+                                <button className="btn-danger">
+                                    Ajouter au panier <i className="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div className="row descproduit">
