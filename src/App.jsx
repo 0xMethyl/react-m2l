@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound';
 import Signupage from './pages/Signupage';
 import Signinpage from './pages/Signinpage';
 import Checkoutpage from './pages/Checkoutpage';
+import Cartpage from './pages/Cartpage'
 import Adminpage from './pages/Adminpage';
 import Contactpage from './pages/Contactpage';
 import ProductSearchpage from './pages/ProductSearchpage';
@@ -79,7 +80,7 @@ const App = () => {
           { ProtectedRoute && <Route path='/login' element={<Signinpage />} /> }
           { ProtectedRoute && <Route path='/profile' element={<Profilepage />} /> }
           { ProtectedRoute && <Route path="/checkout" element={<Checkoutpage />} /> }
-          { ProtectedRoute && <Route path="/cart" element={<Checkoutpage />} /> }
+          { ProtectedRoute && <Route path="/cart" element={<Cartpage />} /> }
           
           
         </Routes>

@@ -12,12 +12,33 @@ const ProdDesc = () => {
 
     let [num, setNum] = useState(0);
 
-    const onOnclickHandler = (e) => {
-        var qty = textInput.current.value;
+    const onOnclickHandler = async () => {
 
-        let data = axios.get("/produits/addToCart/" + id + "/" + qty);
+        let qty = textInput.current.value;
+        let data = await axios.get("/produits/" + id)
+        let produit = data.data.success[0];
+
+        alert(data.data.success[0]);
         alert(qty + " produits ajouté au panier");
         navigate('/home');
+
+        let prod = {
+            id:id,
+            nom:produit.produit_nom,
+            prix: produit.produit_prix,
+            quantite:qty
+        };
+
+        let keyProdStorage = JSON.parse(localStorage.getItem('produits'));
+
+        if (keyProdStorage){
+            keyProdStorage.push(prod);
+            localStorage.setItem("produits", JSON.stringify(keyProdStorage));
+        } else {
+            keyProdStorage = [];
+            keyProdStorage.push(prod);
+            localStorage.setItem("produits", JSON.stringify(keyProdStorage));
+        }
 
         return data;
     };
@@ -68,8 +89,8 @@ const ProdDesc = () => {
 
 
     return (   
-        <div>
-        {produits.map((produit) => (
+        <>
+        {produits?.map((produit) => (
             <div className="prodDesc">
             <div className="row">
                 <img className="col-7 mb-5 imgDesc" style={{width: "auto",height: "21em",margin: "auto"}} src={`/images/${produit.produit_nom}.jpg`.split(' ').join('_')} alt="missing" />
@@ -77,18 +98,16 @@ const ProdDesc = () => {
                     <h4>{produit.produit_nom}</h4>
                     <h4 className="prisque">{produit.produit_prix} €</h4>
                     <div style={{marginTop: "25px",textAlign: "right"}} className="col-12 alert alert-success">Stock disponible : {produit.produit_quantite}</div>
-                    <form onSubmit={onOnclickHandler}>
                         <div style={{textAlign:"center",marginBottom: "5px",display: "flex",justifyContent: "right"}}>
                             <input className="btn btn-outline-danger" onClick={decNum} type="button" value="-" style={{fontSize:"10px"}} />
                             <input className="btn btn-danger" ref={textInput} type="button" id="text" onChange={handleChange} value={num} readonly="true" style={{fontSize:"10px"}} />
                             <input className="btn btn-outline-danger" type="button" value="+" onClick={incNum} style={{fontSize:"10px"}} /> 
                             <div style={{marginTop: "25px",display: "flex",justifyContent: "right"}}>
-                                <button className="btn-danger">
-                                    Ajouter au panier <i className="fas fa-shopping-cart"></i>
-                                </button>
-                            </div>
+                            <button className="btn-danger" onClick={() => {onOnclickHandler()}}>
+                                Ajouter au panier <i className="fas fa-shopping-cart"></i>
+                           </button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div className="row descproduit">
@@ -96,7 +115,7 @@ const ProdDesc = () => {
             </div>
         </div>
         ))}
-        </div>
+        </>
     
     )
 }
