@@ -20,8 +20,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
 
-
-
 const App = () => {
   const [loginStatus, setLoginStatus] = useState("");
 
