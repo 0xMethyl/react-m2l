@@ -59,7 +59,7 @@ const App = () => {
             <Contactpage />
           } />  
 
-          <Route path="/search/:keyword" element={
+          <Route path="/search" element={
             <ProductSearchpage />
           } />
 
@@ -76,6 +76,7 @@ const App = () => {
 
           { ProtectedRoute && <Route path='/signup' element={<Signupage />} /> }
           { ProtectedRoute && <Route path='/login' element={<Signinpage />} /> }
+          { ProtectedRoute && <Route path='/admin' element={<Signinpage />} /> }
           { ProtectedRoute && <Route path='/profile' element={<Profilepage />} /> }
           { ProtectedRoute && <Route path="/checkout" element={<Checkoutpage />} /> }
           { ProtectedRoute && <Route path="/cart" element={<Cartpage />} /> }

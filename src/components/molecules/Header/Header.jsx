@@ -88,9 +88,9 @@ const Header = () => {
                   </nav>
                 </div>
                 <ul className="nav col-12  col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{ fontSize:"15px", marginLeft: "auto", marginRight:"0", fontFamily:"sans-serif", fontWeight:"600", float:"left"}}>
-                  <li><a href="/home" style={{ color:"#ec4646" }} className="nav-link px-2">Home</a></li>
-                  <li><a href="/contact" className="nav-link px-2 text-white">Contact</a></li>
-                  <li><a href="/support" className="nav-link px-2 text-white">Support</a></li>
+                  <li><a href="/home" style={{ color:"#ec4646" }} className="nav-link px-2">🏠 Accueil</a></li>
+                  <li><a href="/contact" className="nav-link px-2 text-white">📝 Nous contacter</a></li>
+                  <li><a href="/support" className="nav-link px-2 text-white">❓ Support technique</a></li>
                 </ul>
 
                 <form action="/search" className="col-12 mb-3 mb-lg-0 me-lg-3 col-lg-3 pl-1 ml-2 float-right" style={{ marginLeft: "auto", marginRight:"0"}}>

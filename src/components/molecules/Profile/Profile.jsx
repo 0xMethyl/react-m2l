@@ -3,7 +3,9 @@ import React from "react";
 const Profile = () => {
 
     return(
-        <div></div>
+        <div className='profile' style={{zIndex:"-1"}}>
+
+        </div>
     )
 }
 

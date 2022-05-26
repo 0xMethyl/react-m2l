@@ -9,7 +9,7 @@ const Cart = () => {
     alert(initialValue);
     
     return (
-        <div className='cart'>
+        <div className='cart' style={{zIndex:"-1"}}>
 
         </div>
     )
