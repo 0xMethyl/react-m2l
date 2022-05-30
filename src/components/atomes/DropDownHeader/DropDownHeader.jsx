@@ -12,7 +12,7 @@ const DropDownHeader = () => {
     
         axios.get("/produits/categories")
             .then((res) => {
-                console.log(res);
+                console.log(res.data.success);
                 setCategories(res.data.success);
             })
             .catch((err) => {

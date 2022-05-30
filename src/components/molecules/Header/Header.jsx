@@ -48,7 +48,14 @@ const Header = () => {
 
   useEffect(() => {
     logged();
+    itemsCount();
   }, [])
+
+  const itemsCount = () => {
+    const items = JSON.parse(localStorage.getItem("produits")).length;
+    console.log(items);
+    return items;
+  }
 
   const logged = () => {
     axios.get("/users/login").then((response) => {
@@ -82,6 +89,7 @@ const Header = () => {
                   <nav className="sidebar-nav-list" style={{fontWeight:"600"}}>
                       <div className='sidebar-nav-dropdown'>
                         <a href="/#" onClick={(e) =>{ e.preventDefault(); setToggle(!toggle)}} className="sidebar-nav-item sidebar-nav-dropdown-toggle"><span role="img" aria-label="desktop"><i className='me-2'></i>📂</span> Catégories </a>
+                        <a href="/cart" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🛒</span> Panier<span class="badge badge-light">{itemsCount}</span></a>
                         { toggle && <DropDownHeader /> }
                         { loginStatus && <LoggedHeader />}
                         { !loginStatus && <Connexion/> }

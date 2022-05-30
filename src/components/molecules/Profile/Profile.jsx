@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from '../../../config/axios';
 
 const Profile = () => {
-    const [ui, setUserInfos] = useState([]);
+    const [userInfos, setUserInfos] = useState([]);
 
     useEffect(() => {
         fetchUI();
     }, []);
 
     const fetchUI = async () => {
-        const {data} = await axios.get("/users/login");
-        console.log(data);
+        let data = await axios.get("/users/login");
+        console.log(data.data);
+        
         setUserInfos(data.data);
-        alert(data.data.client_nom)
     }
 
     return(
@@ -24,11 +24,10 @@ const Profile = () => {
                     <div className="col-12 mb-5 mt-3">
                         <div className="container">
                             <div className="row">                   
-                            {ui && ui.map(user => (
+                            {userInfos && userInfos.map((user) => (
                                 <div className="col-12 col-sm-6 col-lg-4 mb-5 mt-3">
-                                        <p>test</p>
-                                        <p><span>Prix : {user.client_nom}</span></p>
-
+                
+                                    <p>Nom : {user.client_nom}</p>
                                 </div>
                             ))}
                             </div>

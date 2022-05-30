@@ -51,7 +51,7 @@ const App = () => {
             <Contactpage />
           } />  
 
-          <Route path="/search" element={
+          <Route path="/search/:keyword" element={
             <ProductSearchpage />
           } />
 
