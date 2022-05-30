@@ -47,14 +47,6 @@ const App = () => {
             <NotFound />
           } /> 
 
-          <Route path="/terms" element={
-            <Signupage />
-          } />  
-
-          <Route path="/privacy" element={
-            <Signupage />
-          } />  
-
           <Route path="/contact" element={
             <Contactpage />
           } />  
@@ -76,7 +68,7 @@ const App = () => {
 
           { ProtectedRoute && <Route path='/signup' element={<Signupage />} /> }
           { ProtectedRoute && <Route path='/login' element={<Signinpage />} /> }
-          { ProtectedRoute && <Route path='/admin' element={<Signinpage />} /> }
+          { ProtectedRoute && <Route path='/admin' element={<Adminpage />} /> }
           { ProtectedRoute && <Route path='/profile' element={<Profilepage />} /> }
           { ProtectedRoute && <Route path="/checkout" element={<Checkoutpage />} /> }
           { ProtectedRoute && <Route path="/cart" element={<Cartpage />} /> }

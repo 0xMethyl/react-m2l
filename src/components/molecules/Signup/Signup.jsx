@@ -3,9 +3,11 @@
 
 import React from 'react';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
+	const navigate = useNavigate();
 	const [genre, setGenre] = useState("");
 	const [datenaissance, setDatenaissance] = useState("");
 	const [nom, setNom] = useState("");
@@ -22,7 +24,7 @@ const Signup = () => {
 	
 	const register = () => {
 		
-	fetch('http://localhost:3001/users/register', {
+	fetch('http://localhost:4000/users/register', {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json',
@@ -46,8 +48,8 @@ const Signup = () => {
 	}
 
 	const handleSubmit = (event) => {
-		event.preventDefault()
-		register() 
+		register();
+		navigate("/login");
 	}
 	
 	const handleChange1 = (event) => {
