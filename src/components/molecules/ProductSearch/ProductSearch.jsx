@@ -14,7 +14,9 @@ const ProductSearch = () => {
     
     const fetchProduits = () => {
 
-        axios.get("/produits/search/" + searchParams.get("keyword"))
+        axios.get("/produits/search/" + searchParams.get("keyword"), {
+            keyword:searchParams.get("keyword")
+        })
             .then((res) => {
                 console.log(res);
                 setProduits(res.data.success);
@@ -32,7 +34,7 @@ const ProductSearch = () => {
                     <div className="col-12 mb-5 mt-3" style={{fontFamily:"sans-serif"}}>
                         <div className="container">
                             <div className="row">                   
-                            {produits.map((produit) => (
+                            {produits?.map((produit) => (
                                 <div className="col-12 col-sm-6 col-lg-3 mb-5 mt-3">
                                     <div height="200px" className="rounded border border-dark pt-3 pb-1" style={{backgroundColor: "white"}}>
                                         <img className="prodImg" style={{display:"flex", margin:"0 auto"}} src={`images/${produit.produit_nom}.jpg`.split(' ').join('_')} alt="" />

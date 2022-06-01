@@ -1,26 +1,59 @@
 import React, { useState, useEffect } from "react";
-// import axios from '../../../config/axios';
+import { useNavigate } from "react-router-dom";
+import axios from '../../../config/axios';
 
 const Cart = () => {
+    const navigate = useNavigate();
+    let [prix, setPrix] = useState(0);
 
-    const [prix, setPrix] = useState(0);
+    let [loggedIn, setLoginStatus] = useState(false);
     let items = JSON.parse(localStorage.getItem("produits"));
     if (items != null){
         //console.log(items);
     } else {
-        localStorage.setItem("produits", "[{}]");
+        localStorage.setItem("produits", "[]");
+        navigate("/home");
     }
 
-    console.log(items[0].nom);
+    useEffect(() => {
+        
+        axios.get("/users/login").then((response) => {
+			if (response.data.loggedIn === true){
+				setLoginStatus(true);
+			}
+		}).catch((err) =>{
+			console.log("login error ", err)
+		})
 
-    const totalPrix = () => {
-        let total = 0;
         items.forEach((i) => {
-            setPrix(prix + i.prix * i.quantite);
+            prix += i.prix * i.quantite;
         });
-        return total;
+        console.log(prix);
+        setPrix(prix);
+    }, []);
+
+
+    console.log(items.length);
+
+    const onClick = (e) => {
+        let id = e.currentTarget.id;
+
+        let items = JSON.parse(localStorage.getItem("produits"))
+
+        items.splice(id, 1);
+        localStorage.setItem("produits", JSON.stringify(items));
+        window.location.reload();
+    } 
+
+    const onPay = () => {
+        if(loggedIn === true){
+            navigate("/checkout");
+        } else {
+            navigate("/login");
+        }
     }
 
+    
     return(
         <div className="main" style={{zIndex:"-1"}}>
             <div className="container produit-list" >
@@ -30,21 +63,26 @@ const Cart = () => {
                     <div className="col-12 mb-5 mt-3">
                         <div className="container">
                             <div className="row">                   
-                                {items && items.map((i) => (
+                                {items?.map((i, index) => (
                                     <div>
-                                        <h3>{i.nom}</h3>
+                                        <h3><u>{i.nom}</u></h3>
                                         <img className="prodImg" style={{display:"flex", margin:"0 auto"}} src={`/images/${i.nom}.jpg`.split(' ').join('_')} alt={i.nom} />
-                                        <h5>Quantité : {i.quantite}</h5>
-                                        <h5>Prix unitaire : <b>{i.prix}</b></h5>
+                                        <h5>Quantité : {i.quantite}</h5><button id={index} onClick={onClick} className="btn btn-danger float-right">Supprimer le produit</button>
+                                        <h5>Prix unitaire : <b>{i.prix} €</b></h5>
                                         <h5>Prix total : <b>{i.prix * i.quantite} €</b></h5>
-                                        <hr />
+                                        {(items.length > 1) ? <hr/> : ""}
                                     </div>
                                 ))}
+                                
                             </div>
+                            
                         </div>
                     </div>
-                    <p>Prix total : {totalPrix}</p>
-                </div>
+                    <h4><b>Prix total du panier : {prix} €</b></h4>
+                </div>{
+                    (prix <= 0) ? "" : <button onClick={onPay} className="btn btn-danger">Payer</button>
+                }
+                
             </div> 
         </div>
     )

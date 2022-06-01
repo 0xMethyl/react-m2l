@@ -47,7 +47,8 @@ const Signup = () => {
 	  .catch((err) => console.log('error', err))
 	}
 
-	const handleSubmit = (event) => {
+	const handleSubmit = (e) => {
+		e.preventDefault();
 		register();
 		navigate("/login");
 	}
@@ -110,7 +111,7 @@ const Signup = () => {
 		
         <div className="sign" align="center" style={{zIndex:"-1"}}>
             <div className='signup-form col-12 offset-0 col-xl-10 offset-lg-0 mt-3' style={{ borderRadius: "15px", boxshadow: "10px" }}>
-                <form class="form" onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
 			    <h2>Création de compte</h2>
 		            <p>Il ne vous reste plus qu'à renseigner vos informations</p>
 		            <hr />

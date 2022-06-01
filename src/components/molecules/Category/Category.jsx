@@ -12,7 +12,7 @@ const Produit = () => {
 
     const fetchProduits = () => {
 
-        axios.get("/produits/categories/" + id)
+        axios.get("/produits/categories/" + parseInt(id))
             .then((res) => {
                 console.log(res);
                 setProduits(res.data.success);
@@ -30,7 +30,7 @@ const Produit = () => {
                 <div className="col-12 mb-5 mt-3">
                     <div className="container">
                         <div className="row">                   
-                        {produits.map((produit) => (
+                        {produits?.map((produit) => (
                             <div className="col-12 col-sm-6 col-lg-3 mb-5 mt-3">
                                 <div height="200px" className="rounded border border-dark pt-3 pb-1" style={{backgroundColor: "white"}}>
                                     <img className="prodImg" style={{display:"flex", margin:"0 auto"}} src={`../images/${produit.produit_nom}.jpg`.split(' ').join('_')} alt="" />

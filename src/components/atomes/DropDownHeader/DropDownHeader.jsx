@@ -20,14 +20,13 @@ const DropDownHeader = () => {
         });
     }
 
-    return (
+    return(
         <div className='sidebar-nav-dropdown-menu'>
             {categories.map((categorie) => (
                 <div className="raw">
                     <a href={`/category/${categorie.categorie_id}`} className="sidebar-nav-dropdown-item"><i className='me-3'></i><span role="img" aria-label={categorie.categorie_nom}>◽</span><i className='me-2'></i> {categorie.categorie_nom.toUpperCase()}</a>
                 </div>
             ))}
-
         </div>
     )
 }

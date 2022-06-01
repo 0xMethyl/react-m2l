@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from '../../../config/axios';
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
     const [userInfos, setUserInfos] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchUI();
@@ -10,9 +12,14 @@ const Profile = () => {
 
     const fetchUI = async () => {
         let data = await axios.get("/users/login");
-        console.log(data.data);
-        
+        console.log(data.data.client_nom);
         setUserInfos(data.data);
+
+        if(data.data.loggedIn === true){
+    
+        } else {
+            navigate("/login");
+        }
     }
 
     return(
@@ -24,12 +31,30 @@ const Profile = () => {
                     <div className="col-12 mb-5 mt-3">
                         <div className="container">
                             <div className="row">                   
-                            {userInfos && userInfos.map((user) => (
+
                                 <div className="col-12 col-sm-6 col-lg-4 mb-5 mt-3">
-                
-                                    <p>Nom : {user.client_nom}</p>
+                                    <div className="form-group col-md-6 col-12">
+                                        <div className="input-group">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text">
+                                                    <span className="fa fa-user"></span>
+                                                </span>                    
+                                            </div>
+                                            <div className=""><p>Nom : {userInfos.client_nom}</p></div>
+                                        </div>
+                                    </div>
+                                    <div className="form-group col-md-6 col-12">
+                                        <div className="input-group">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text">
+                                                    <span className="fa fa-user"></span>
+                                                </span>                    
+                                            </div>
+                                            <div className=""><p>Nom : {userInfos.client_nom}</p></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            ))}
+
                             </div>
                         </div>
                     </div>

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from '../../../config/axios';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ProdDesc = () => {
 
     let textInput = React.createRef();
     const { id } = useParams();
     const [produits, setProduits] = useState([]);
-    const [items, setItems] = useState([]);
-
+    const navigate = useNavigate();
     let [num, setNum] = useState(0);
 
     const onClickHandler = async () => {
@@ -20,9 +19,8 @@ const ProdDesc = () => {
         if(qty >= 2){
             alert(qty + " " + produit.produit_nom + " ajoutés au panier");
         } else {
-            alert(qty + " " + produit.produit_nom + " produit ajouté au panier");
+            alert(qty + " " + produit.produit_nom + " ajouté au panier");
         }
-
 
         let prod = {
             id:id,
@@ -31,17 +29,12 @@ const ProdDesc = () => {
             quantite:qty
         };
 
-        
         let itemsStorage = JSON.parse(localStorage.getItem('produits')) || [];
 
-        if (itemsStorage){
-            itemsStorage.push(prod);
-            localStorage.setItem("produits", JSON.stringify(itemsStorage));
-        } else {
-            itemsStorage = [];
-            itemsStorage.push(prod);
-            localStorage.setItem("produits", JSON.stringify(itemsStorage));
-        }
+
+        itemsStorage.push(prod);
+        localStorage.setItem("produits", JSON.stringify(itemsStorage));
+        navigate("/home");
     };
     
 

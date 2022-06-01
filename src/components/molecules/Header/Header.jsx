@@ -13,6 +13,7 @@ import Connexion from '../../atomes/Connexion/Connexion';
 const Header = () => {
   const [keyword, setKeyword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
+  const items = JSON.parse(localStorage.getItem("produits"));
 
   const search = () => {
 
@@ -48,14 +49,7 @@ const Header = () => {
 
   useEffect(() => {
     logged();
-    itemsCount();
-  }, [])
-
-  const itemsCount = () => {
-    const items = JSON.parse(localStorage.getItem("produits")).length;
-    console.log(items);
-    return items;
-  }
+  }, []);
 
   const logged = () => {
     axios.get("/users/login").then((response) => {
@@ -88,8 +82,8 @@ const Header = () => {
                   </div>
                   <nav className="sidebar-nav-list" style={{fontWeight:"600"}}>
                       <div className='sidebar-nav-dropdown'>
-                        <a href="/#" onClick={(e) =>{ e.preventDefault(); setToggle(!toggle)}} className="sidebar-nav-item sidebar-nav-dropdown-toggle"><span role="img" aria-label="desktop"><i className='me-2'></i>📂</span> Catégories </a>
-                        <a href="/cart" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🛒</span> Panier<span class="badge badge-light">{itemsCount}</span></a>
+                        <a href="/#" onClick={(e) =>{ e.preventDefault(); setToggle(!toggle); console.log(toggle)}} className="sidebar-nav-item sidebar-nav-dropdown-toggle"><span role="img" aria-label="desktop"><i className='me-2'></i>📂</span> Catégories </a>
+                        <a href="/cart" className="sidebar-nav-item"><span role="img" aria-label="desktop"><i className='me-2'></i>🛒</span><div className="mr-1">Panier </div><span className="badge badge-light">{items.length}</span></a>
                         { toggle && <DropDownHeader /> }
                         { loginStatus && <LoggedHeader />}
                         { !loginStatus && <Connexion/> }
@@ -101,7 +95,7 @@ const Header = () => {
                   <li><a href="/contact" className="nav-link px-2 text-white">📝 NOUS CONTACTER</a></li>
                 </ul>
 
-                <form action="/search" className="col-12 mb-3 mb-lg-0 me-lg-3 col-lg-3 pl-1 ml-2 float-right" style={{ marginLeft: "auto", marginRight:"0"}}>
+                <form action="/search" className="col-12 mb-3 mb-lg-0 me-lg-3 col-lg-3 pl-1 ml-2 float-right" style={{ marginLeft: "auto", marginRight:"0", display: "none"}}>
                   <input type="search" name="keyword" className="form-control form-control-dark" onChange={handleSearch} placeholder="Rechercher sur North Sport..." aria-label="Search" />
                 </form>
               </div>
