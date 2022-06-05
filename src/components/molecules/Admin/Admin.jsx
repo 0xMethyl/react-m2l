@@ -117,6 +117,16 @@ const Admin = () => {
 										<input type="text" className="form-control" id="start" placeholder="Nom" onChange={handleChange1} value={nom}/>
 									</div>
 								</div>
+								<div className="form-group col-md-6 col-12">
+								<div className="input-group">
+									<div className="input-group-prepend">
+										<span className="input-group-text">
+											<i class="fa fa-arrow-up" aria-hidden="true"></i>
+										</span>                    
+									</div>
+									<input type="text" className="form-control" style={{ }} onChange = {handleChange7} placeholder="Taille" value={taille} required="required" />
+								</div>
+							</div>
 							</div>
 							<div className="row">
 								<div className="form-group col-md-6 col-12">
@@ -139,16 +149,6 @@ const Admin = () => {
 									</div>
 								</div>
 							</div>
-							<div className="form-group col-md-6 col-12">
-									<div className="input-group">
-										<div className="input-group-prepend">
-											<span className="input-group-text">
-												<i class="fa fa-arrow-up" aria-hidden="true"></i>
-											</span>                    
-										</div>
-										<input type="text" className="form-control" style={{ }} onChange = {handleChange7} placeholder="Taille" value={taille} required="required" />
-									</div>
-								</div>
                     		<div className="form-group">
 								<div className="input-group">
 		            				<div className="input-group-prepend">
@@ -186,13 +186,14 @@ const Admin = () => {
 									</div>
 								</div>
                             </div>
-                            </div>
+                         </div>
+					
 		            <div className="form-group">
                         <button type="submit" style={{ backgroundColor: "rgba(87,10,184,255)", offline: "none", border: "none" }} className="btn btn-danger btn-lg">Ajouter</button>
                     </div>
                 </form>
             </div>
-        </div>
+		</div>
     );
 }
 

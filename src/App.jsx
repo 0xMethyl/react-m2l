@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Signupage from './pages/Signupage';
 import Signinpage from './pages/Signinpage';
-import Checkoutpage from './pages/Checkoutpage';
 import Cartpage from './pages/Cartpage'
 import Adminpage from './pages/Adminpage';
 import Contactpage from './pages/Contactpage';
@@ -13,6 +12,7 @@ import ProductSearchpage from './pages/ProductSearchpage';
 import CategoryPage from './pages/Categorypage';
 import ProductPage from './pages/ProductPage';
 import Profilepage from './pages/Profilepage';
+import Commandespage from './pages/Commandepage';
 
 import axios from './config/axios';
 
@@ -70,8 +70,8 @@ const App = () => {
           { ProtectedRoute && <Route path='/login' element={<Signinpage />} /> }
           { ProtectedRoute && <Route path='/admin' element={<Adminpage />} /> }
           { ProtectedRoute && <Route path='/profile' element={<Profilepage />} /> }
-          { ProtectedRoute && <Route path="/checkout" element={<Checkoutpage />} /> }
           { ProtectedRoute && <Route path="/cart" element={<Cartpage />} /> }
+          { ProtectedRoute && <Route path="/commandes" element={<Commandespage />} /> }
           
           
         </Routes>

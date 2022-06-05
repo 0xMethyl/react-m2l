@@ -7,7 +7,11 @@ const Cart = () => {
     let [prix, setPrix] = useState(0);
 
     let [loggedIn, setLoginStatus] = useState(false);
+    let [idClient, setIdClient] = useState(0);
     let items = JSON.parse(localStorage.getItem("produits"));
+    let date = new Date();
+    console.log(date);
+    console.log(items);
     if (items != null){
         //console.log(items);
     } else {
@@ -20,6 +24,7 @@ const Cart = () => {
         axios.get("/users/login").then((response) => {
 			if (response.data.loggedIn === true){
 				setLoginStatus(true);
+                setIdClient(response.data.client_id);
 			}
 		}).catch((err) =>{
 			console.log("login error ", err)
@@ -47,7 +52,20 @@ const Cart = () => {
 
     const onPay = () => {
         if(loggedIn === true){
-            navigate("/checkout");
+            // Paiement
+            fetch('http://localhost:4000/produits/addCommande', {
+	        method: 'POST',
+	        headers: {
+		        'Content-Type': 'application/json',
+	        },
+            body: JSON.stringify({
+                prix: prix,
+                produit: items.nom,
+                clientid: idClient,
+                date: date,
+            }),
+        })
+        alert("Votre commande a été passée");
         } else {
             navigate("/login");
         }

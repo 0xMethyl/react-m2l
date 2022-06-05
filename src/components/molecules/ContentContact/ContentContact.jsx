@@ -57,7 +57,9 @@ const ContentContact = () => {
 
         <div className="main" style={{zIndex:"-1"}}>
             <div className="container">
-                <h1>Formulaires</h1>
+                <h1>📨 Envoyez-nous un message !</h1>
+                <p><p>Il ne vous reste plus qu'à renseigner les champs ci-dessous</p></p>
+                <hr/>
                 <form className="needs-validation" onSubmit={handleSubmit}>
                     <div className="form-row">
                         <div className="col-md-4 mb-3">

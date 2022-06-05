@@ -8,6 +8,7 @@ const Profile = () => {
 
     useEffect(() => {
         fetchUI();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const fetchUI = async () => {
@@ -31,30 +32,16 @@ const Profile = () => {
                     <div className="col-12 mb-5 mt-3">
                         <div className="container">
                             <div className="row">                   
+                                <h2>Bonjour {userInfos.client_prenom},</h2>
+                                <p>Voici les données relatives à votre compte client:</p>
 
-                                <div className="col-12 col-sm-6 col-lg-4 mb-5 mt-3">
-                                    <div className="form-group col-md-6 col-12">
-                                        <div className="input-group">
-                                            <div className="input-group-prepend">
-                                                <span className="input-group-text">
-                                                    <span className="fa fa-user"></span>
-                                                </span>                    
-                                            </div>
-                                            <div className=""><p>Nom : {userInfos.client_nom}</p></div>
-                                        </div>
-                                    </div>
-                                    <div className="form-group col-md-6 col-12">
-                                        <div className="input-group">
-                                            <div className="input-group-prepend">
-                                                <span className="input-group-text">
-                                                    <span className="fa fa-user"></span>
-                                                </span>                    
-                                            </div>
-                                            <div className=""><p>Nom : {userInfos.client_nom}</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <p>Prénom : {userInfos.client_prenom}</p>
+                                <p>Nom : {userInfos.client_nom}</p>
+                                <p>Date de naissance : {userInfos.client_datenaissance}</p>
+                                <p>E-mail : {userInfos.client_email}</p>
+                                <p>Téléphone : {userInfos.client_phone}</p>
+                                <p>Adresse : {userInfos.client_adresse}</p>
+                                <p>Ville : {userInfos.client_ville}</p>
                             </div>
                         </div>
                     </div>
